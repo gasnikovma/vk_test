@@ -1,4 +1,4 @@
-package com.gasnikovma.vk.models.dbentity;
+package com.gasnikovma.vk.models.dbEntity;
 
 import jakarta.persistence.*;
 import lombok.Data;

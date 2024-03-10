@@ -2,7 +2,7 @@ package com.gasnikovma.vk.controllers;
 
 
 import com.gasnikovma.vk.services.ServiceAddUser;
-import com.gasnikovma.vk.models.dbentity.User;
+import com.gasnikovma.vk.models.dbEntity.User;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

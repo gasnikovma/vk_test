@@ -1,6 +1,6 @@
 package com.gasnikovma.vk.repository;
 
-import com.gasnikovma.vk.models.dbentity.User;
+import com.gasnikovma.vk.models.dbEntity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

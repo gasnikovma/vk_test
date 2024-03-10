@@ -1,6 +1,6 @@
 package com.gasnikovma.vk;
 
-import com.gasnikovma.vk.models.dbentity.User;
+import com.gasnikovma.vk.models.dbEntity.User;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

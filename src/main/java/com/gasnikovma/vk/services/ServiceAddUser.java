@@ -1,11 +1,10 @@
 package com.gasnikovma.vk.services;
 
-import com.gasnikovma.vk.models.dbentity.User;
+import com.gasnikovma.vk.models.dbEntity.User;
 import com.gasnikovma.vk.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 
