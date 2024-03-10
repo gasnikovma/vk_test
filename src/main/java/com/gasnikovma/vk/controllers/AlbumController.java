@@ -5,6 +5,7 @@ import com.gasnikovma.vk.services.Service;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -18,6 +19,7 @@ public class AlbumController {
 
     @PreAuthorize("hasAuthority('ROLE_ALBUMS_VIEWER') or hasAuthority('ROLE_ADMIN')")
     @GetMapping()
+
     public Mono<String> getAlbums() {
         return serviceImpl.getAlbums();
     }

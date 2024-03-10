@@ -6,6 +6,7 @@ import com.gasnikovma.vk.models.Album;
 import com.gasnikovma.vk.models.Post;
 import com.gasnikovma.vk.models.User;
 import lombok.AllArgsConstructor;
+import org.springframework.cache.annotation.Cacheable;
 import reactor.core.publisher.Mono;
 
 @org.springframework.stereotype.Service
@@ -15,15 +16,17 @@ public class Service {
 
     private JsonPlaceHolderClient jsonPlaceHolderClient;
 
-
+    @Cacheable("users")
     public Mono<String> getUsers() {
         return jsonPlaceHolderClient.getUsers();
     }
 
+    @Cacheable("user")
     public Mono<User> getUser(int id) {
         return jsonPlaceHolderClient.getUser(id);
     }
 
+    @Cacheable
     public Mono<User> setUser(User user) {
         return jsonPlaceHolderClient.setUser(user);
     }
@@ -36,14 +39,17 @@ public class Service {
         return jsonPlaceHolderClient.updateUser(id, user);
     }
 
+    @Cacheable("comments")
     public Mono<String> getComments(int id) {
         return jsonPlaceHolderClient.getComments(id);
     }
 
+    @Cacheable("posts")
     public Mono<String> getPosts() {
         return jsonPlaceHolderClient.getPosts();
     }
 
+    @Cacheable("post")
     public Mono<Post> getPost(int id) {
         return jsonPlaceHolderClient.getPost(id);
     }
@@ -59,11 +65,11 @@ public class Service {
     public Mono<Post> updatePost(int id, Post post) {
         return jsonPlaceHolderClient.updatePost(id, post);
     }
-
+    @Cacheable("albums")
     public Mono<String> getAlbums() {
         return jsonPlaceHolderClient.getAlbums();
     }
-
+    @Cacheable("album")
     public Mono<Album> getAlbumById(int id) {
         return jsonPlaceHolderClient.getAlbumById(id);
     }
@@ -77,6 +83,6 @@ public class Service {
     }
 
     public Mono<Album> updateAlbum(int id, Album album) {
-        return jsonPlaceHolderClient.updateAlbum(id,album);
+        return jsonPlaceHolderClient.updateAlbum(id, album);
     }
 }
