@@ -1,6 +1,6 @@
 package com.gasnikovma.vk;
 
-import com.gasnikovma.vk.models.dbEntity.User;
+import com.gasnikovma.vk.models.dbEntity.UserTable;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -11,8 +11,8 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 @Slf4j
 public class MyUserDetails implements UserDetails {
-    private User user;
-    public MyUserDetails(User user){
+    private UserTable user;
+    public MyUserDetails(UserTable user){
         this.user=user;
     }
     @Override

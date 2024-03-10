@@ -1,7 +1,7 @@
 package com.gasnikovma.vk.services;
 
 import com.gasnikovma.vk.MyUserDetails;
-import com.gasnikovma.vk.models.dbEntity.User;
+import com.gasnikovma.vk.models.dbEntity.UserTable;
 import com.gasnikovma.vk.repository.UserRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ public class MyUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Optional<User> user = repository.findByName(username);
+        Optional<UserTable> user = repository.findByName(username);
         return user.map(MyUserDetails::new).orElseThrow(() -> new UsernameNotFoundException(username + "not found"));
     }
 }

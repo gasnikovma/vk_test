@@ -6,10 +6,12 @@ import com.gasnikovma.vk.models.Album;
 import com.gasnikovma.vk.models.Post;
 import com.gasnikovma.vk.models.User;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cache.annotation.Cacheable;
 import reactor.core.publisher.Mono;
 
 @org.springframework.stereotype.Service
+@Slf4j
 @AllArgsConstructor
 public class Service {
 
@@ -51,6 +53,7 @@ public class Service {
 
     @Cacheable("post")
     public Mono<Post> getPost(int id) {
+        log.info("getting post by id: {}", id);
         return jsonPlaceHolderClient.getPost(id);
     }
 
