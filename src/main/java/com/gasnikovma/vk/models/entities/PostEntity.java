@@ -10,6 +10,8 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDateTime;
+
 @Data
 @Entity
 @Table(name = "Posts")
@@ -23,9 +25,9 @@ public class PostEntity {
     private int postId;
 
 
-    @Column(name = "created_date", nullable = false, updatable = false)
     @CreatedDate
-    private long createdDate;
+    @Column(name = "created_date", nullable = false, updatable = false)
+    private LocalDateTime localDateTime;
 
 
     @Column(name = "created_by")

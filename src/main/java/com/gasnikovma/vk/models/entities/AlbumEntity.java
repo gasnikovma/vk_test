@@ -11,6 +11,12 @@ import org.springframework.data.annotation.LastModifiedBy;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.Instant;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.Date;
+
 @Data
 @Entity
 @Table(name = "Albums")
@@ -21,9 +27,11 @@ public class AlbumEntity {
     private Long id;
 
     private int albumId;
-    @Column(name = "created_date", nullable = false, updatable = false)
+
+
     @CreatedDate
-    private long createdDate;
+    @Column(name = "created_date", nullable = false, updatable = false)
+    private LocalDateTime localDateTime;
 
 
     @Column(name = "created_by")
