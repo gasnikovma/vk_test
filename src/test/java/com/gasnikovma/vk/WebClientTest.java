@@ -67,8 +67,8 @@ public class WebClientTest {
                     aResponse().withHeader(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON_VALUE)
                             .withBody(wireMockResponse)));
         User user = jsonPlaceHolderClient.getUser(7).block();
-        assertEquals(user.phone(),"210.067.6132");
-        assertEquals(user.email(),"Telly.Hoeger@billy.biz");
+        assertEquals(user.getPhone(),"210.067.6132");
+        assertEquals(user.getEmail(),"Telly.Hoeger@billy.biz");
 
 
     }
