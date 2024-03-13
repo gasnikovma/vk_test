@@ -25,6 +25,7 @@ public class PostsController {
     @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('ROLE_POSTS_VIEWER') or hasAuthority('ROLE_ADMIN')")
     public Mono<Post> getPostById(@Max(100) @Min(1) @PathVariable int id) {
+
         return serviceImpl.getPost(id);
     }
 
@@ -37,6 +38,7 @@ public class PostsController {
     @PostMapping()
     @PreAuthorize("hasAuthority('ROLE_POSTS_EDITOR') or hasAuthority('ROLE_ADMIN')")
     public Mono<Post> setPost(@RequestBody Post post) {
+
         return serviceImpl.setPost(post);
 
     }

@@ -1,4 +1,4 @@
-package com.gasnikovma.vk.models.dbEntity;
+package com.gasnikovma.vk.models.entities;
 
 import jakarta.persistence.*;
 import lombok.Data;
@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "users")
-public class UserTable {
+public class UserEntity {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;

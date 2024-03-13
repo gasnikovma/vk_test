@@ -11,6 +11,7 @@ import java.time.Duration;
 @Validated
 @ConfigurationProperties(prefix = "app", ignoreUnknownFields = false)
 @EnableCaching
+
 public record ApplicationConfig(
         Api api
 ) {

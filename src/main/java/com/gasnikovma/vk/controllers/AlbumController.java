@@ -5,7 +5,6 @@ import com.gasnikovma.vk.services.Service;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
@@ -45,7 +44,7 @@ public class AlbumController {
     }
 
     @PutMapping("/{id}")
-    @PreAuthorize("hasAuthority('ROLE_ALBUM_EDITOR') or hasAuthority('ROLE_ADMIN')")
+    @PreAuthorize("hasAuthority('ROLE_ALBUMS_EDITOR') or hasAuthority('ROLE_ADMIN')")
     public Mono<Album> updateAlbum(@Min(1) @Max(100) @PathVariable int id, @RequestBody Album album) {
         return serviceImpl.updateAlbum(id, album);
     }

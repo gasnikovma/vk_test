@@ -1,10 +1,12 @@
 package com.gasnikovma.vk.models;
 
-public record Address(
-        String street,
-        String suite,
-        String city,
-        String zipcode,
-        Geo geo
-) {
+import lombok.Data;
+
+@Data
+public class Address {
+    String street;
+    String suite;
+    String city;
+    String zipcode;
+    Geo geo;
 }

@@ -1,8 +1,10 @@
 package com.gasnikovma.vk.models;
 
-public record Geo(
-        String lat,
-        String lng
-) {
 
+import lombok.Data;
+
+@Data
+public class Geo {
+    String lat;
+    String lng;
 }

@@ -1,8 +1,10 @@
 package com.gasnikovma.vk.models;
 
-public record Album(
-        int userId,
-        int id,
-        String title
-) {
+import lombok.Data;
+
+@Data
+public class Album {
+    int userId;
+    int id;
+    String title;
 }
